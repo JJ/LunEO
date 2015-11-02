@@ -19,7 +19,7 @@ length = 16
 iterations = 1000000
 top_length = 32768
 repeat 
-    indi = random_chromosome(length)
+    indi = new Chromosome (nodeo.utils.random( length ) );
     print("lua, BitString, " .. length ..", ".. time_mutations( iterations, indi ))
     length = length*2
 until length > top_length
