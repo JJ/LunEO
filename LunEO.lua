@@ -24,7 +24,7 @@ function mutate1 ( chromosome )
    mutation_point = math.random( chromosome:len() )
    temp = chromosome
    mutie = temp:sub(1,mutation_point-1)
-   print( "M " .. mutation_point .. " - " .. temp:sub(mutation_point,mutation_point) )
+--   print( "M " .. mutation_point .. " - " .. temp:sub(mutation_point,mutation_point) )
    if temp:sub(mutation_point,mutation_point) == '1'
    then 
       mutie = mutie .. '0'
