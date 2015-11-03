@@ -5,10 +5,10 @@
 ]]--
 
 -- Mutate and compute time
-function time_mutations (number,indi)
+function time_crossover (number,indi,other_indi)
    inicioTiempo = os.clock()
    for i=1,number do
-      mutate1( indi )
+      result = crossover( indi, other_indi )
    end
    return os.clock() - inicioTiempo 
 end
@@ -20,7 +20,8 @@ iterations = 100000
 top_length = 32768
 repeat 
     indi = random_chromosome(length)
-    print("lua, BitString, " .. length ..", ".. time_mutations( iterations, indi ))
+    other_indi = random_chromosome(length)
+    print("lua-BitString, " .. length ..", ".. time_crossover( iterations, indi, other_indi ))
     length = length*2
 until length > top_length
 
